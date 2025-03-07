@@ -1,30 +1,20 @@
-document.addEventListener("DOMContentLoaded", function () {
-    var divElement = document.getElementById("viz1741309168311");
-    var vizElement = divElement.getElementsByTagName("object")[0];
+function adjustTableauSize() {
+    var vizElement = document.querySelector('.tableauViz');
+    if (!vizElement) return; // Prevent errors if element is not found
 
-    function resizeViz() {
-        if (window.innerWidth > 1200) {
-            vizElement.style.minWidth = '1016px';
-            vizElement.style.maxWidth = '100%';
-            vizElement.style.minHeight = '1014px';
-            vizElement.style.maxHeight = (window.innerWidth * 0.75) + 'px';
-        } else if (window.innerWidth > 800) {
-            vizElement.style.minWidth = '1016px';
-            vizElement.style.maxWidth = '100%';
-            vizElement.style.minHeight = '1014px';
-            vizElement.style.maxHeight = (window.innerWidth * 0.75) + 'px';
-        } else {
-            vizElement.style.minWidth = '1016px';
-            vizElement.style.maxWidth = '100%';
-            vizElement.style.minHeight = '1250px';
-            vizElement.style.maxHeight = (window.innerWidth * 1.77) + 'px';
-        }
+    var screenWidth = window.innerWidth;
+
+    if (screenWidth > 1400) {
+        vizElement.style.width = '100%';
+        vizElement.style.height = '85vh';
+    } else if (screenWidth > 800) {
+        vizElement.style.width = '100%';
+        vizElement.style.height = '75vh';
+    } else {
+        vizElement.style.width = '100%';
+        vizElement.style.height = '90vh';
     }
+}
 
-    resizeViz();
-    window.addEventListener('resize', resizeViz);
-
-    var scriptElement = document.createElement('script');
-    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-    vizElement.parentNode.insertBefore(scriptElement, vizElement);
-});
+window.onload = adjustTableauSize;
+window.onresize = adjustTableauSize;
