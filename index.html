@@ -3,28 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="static/icon.png">
     <title>Your Name - Tableau Portfolio</title>
-    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1>Atnafu Ayalew</h1>
-        <p>Tableau Data Visualization Project</p>
+        <h1 style="color: rgb(255, 254, 254); text-align: center; font-family: 'Times New Roman', Times, serif;">Atnafu Ayalew</h1>
+        <p style="color: black; text-align: center; font-family: 'Times New Roman', Times, serif;">Tableau Data Visualization Project</p>
     </header>
 
     <section id="about">
-        <h2>About Me</h2>
-        <p>
-            Welcome to my Tableau portfolio. I'm passionate about data visualization and using Tableau to tell compelling stories.
-            Here, you'll find examples of my work, showcasing my skills in data analysis and visualization.
+        <h2 style="color: black; text-align: center; font-family: 'Times New Roman', Times, serif;">About Me</h2>
+        <p style="color: black; text-align: center; font-family: 'Times New Roman', Times, serif;">
+            Data doesn't lie. In this project, I explored the gender perspective of Citi Bike usage in New York City using publicly available data. This dashboard visualizes bike usage trends using datasets from June 2016 and 2019. I aimed to answer five key questions: rider gender proportion, changes in gender distribution over time, trip duration variations by gender, subscription preferences by gender, and the age distribution of riders by gender. The visualizations within this dashboard provide answers to these questions. This project was a valuable learning experience, allowing me to analyze and understand Citi Bike usage patterns from a gender perspective.
+        </p>
+    </section>
+    <section id="data-extraction">
+        <h2>Data Extraction Process</h2>
+        <p style="color: black; text-align: center; font-family: 'Times New Roman', Times, serif;">
+            <a href="data_extraction.html">Read more about how I extracted and transformed the data using Python and Pandas</a>
         </p>
     </section>
 
     <section id="tableau-dashboard">
-        <h2>Tableau Dashboard</h2>
+        <h2 style="color: black; text-align: center; font-family: 'Times New Roman', Times, serif;">Tableau Dashboard</h2>
         <div class='tableauPlaceholder' id='vizContainer' style='width: 100vw; max-width: 1600px; margin: auto;'>
             <noscript>
                 <a href='#'>
@@ -72,7 +79,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2024 Your Name. All rights reserved.</p>
+        <p>&copy; 2024 Atnafu Ayalew</p>
     </footer>
 
     <script src="static/js/app.js"></script>

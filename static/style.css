@@ -1,12 +1,49 @@
 #tableau-dashboard {
-    width: 100vw; /* Full width of viewport */
-    max-width: 1600px; /* Increased for wider screens */
+    width: 100vw; 
+    max-width: 1600px; 
     margin: auto;
     padding: 20px;
 }
 
 .tableauViz {
     width: 100% !important;
-    height: 85vh !important; /* Increased height */
-    min-width: 800px; /* Ensures it's not too narrow */
+    height: 85vh !important; 
+    min-width: 800px; 
+}
+body {
+    background-color: #e4eaf1; 
+    color: white; 
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+header {
+    background-color: #78cbe4; 
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+
+footer {
+    background-color: #E31837;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+#about {
+    text-align: center;
+    max-width: 800px; 
+    margin: 0 auto; 
+    color: rgb(8, 8, 8);
+}
+
+#about p {
+    font-size: 18px; 
+    line-height: 1.6;
+}
+body {
+    font-family: 'Inter', sans-serif;
 }

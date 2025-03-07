@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="static/icon.png">
+    <title>Data Extraction Process - Tableau Portfolio</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Atnafu Ayalew</h1>
+        <h1>Under construction</h1>
+        <p>Data Extraction and Transformation Using Python and Pandas For CitiBike Dataset</p>
+        <p><a href="index.html">BACK TO HOME PAGE</a> </p>
+    </header>
+
+    <section id="data-extraction-info">
+        <h2>How I Extracted, Transformed, and Cleaned the Data</h2>
+        <p>
+            In this project, I used Python and the Pandas library to extract, transform, and clean data before feeding it into the Tableau dashboard. Below are the key steps I followed during the data extraction and preparation process:<br>
+            Please visit the the jupyter notebook to learn more about the data extraction and cleaning process <a href="https://github.com/atnafb/tableau_CitiBike_Usage/blob/main/citybike_data_extraction.ipynb"> HERE </a>
+        </p>
+
+        <h3>1. Data Extraction</h3>
+        <p>
+            I began by extracting the data from <a href="https://citibikenyc.com/system-data">citiBike system data</a>, publicly available datasets. The data contained information related to Citi Bike usage, such as trip duration, rider gender, and trip locations for the years 2013 to 2025. I used Pandas to extrac the zip files. Instead of manually downloading the file, I used function function to load the raw data into DataFrames for further manipulation.<br>
+            <code style="display: block; text-align: center; font-family: 'Courier New', Courier, monospace;">urls = {
+                "2016": "https://s3.amazonaws.com/tripdata/2016-citibike-tripdata.zip"<br>
+            }<br>
+            def download_zip(url, filename):<br>
+                response = requests.get(url, stream=True)<br>
+                if response.status_code == 200:<br>
+                    with open(filename, 'wb') as file:<br>
+                        for chunk in response.iter_content(chunk_size=1024):<br>
+                            file.write(chunk)<br>
+                            print(f'Downloaded: {filename}')<br>
+                else:<br>
+                    print(f'Failed to download {filename}')<br>
+            
+            for year, url in urls.items():<br>
+                download_zip(url, f"{year}-citibike-tripdata.zip")</code> 
+        </p>
+
+        <h3>2. Data Transformation</h3>
+        <p>
+            After extraction, the next step was transforming the data. This involved operations such as:
+            <ul>
+                <li><strong>Filtering</strong>: Removing irrelevant or missing data points to make the data more managable for Tableau</li>
+                <li><strong>Converting Data Types</strong>: Ensuring numerical columns, such as trip duration and rider age, were in the correct data type (e.g., integers, floats).</li>
+                <li><strong>Handling Missing Values</strong>: Using Pandas' <code>fillna()</code> and <code>dropna()</code> methods to handle missing or null values in the dataset.</li>
+                <li><strong>Creating New Columns</strong>: I derived new columns, such as the "trip duration category" by binning trip durations into categories (e.g., short, medium, long trips).</li>
+            </ul>
+        </p>
+
+        <h3>3. Data Cleaning</h3>
+        <p>
+            The final step was cleaning the data to ensure its accuracy and consistency. Some of the actions I took include:
+            <ul>
+                <li><strong>Removing Duplicates</strong>: Identifying and eliminating duplicate records using <code>drop_duplicates()</code>.</li>
+                <li><strong>Standardizing Values</strong>: Ensuring consistency in categorical columns, such as gender ("Male", "Female" "Unknown").</li>
+                <li><strong>Renaming Columns</strong>: Giving columns more meaningful names for better understanding, such as changing "duration" to "trip_duration_minutes".</li>
+            </ul>
+        </p>
+
+        <h3>4. Final Dataset</h3>
+        <p>
+            After completing the extraction, transformation, and cleaning, I ended up with a clean and well-structured dataset that could be easily analyzed. Here's a summary of the data after processing:
+            <ul>
+                <li>Total rows: 300,000</li>
+                <li>Key columns: Trip ID, Rider Gender, Trip Duration, Start Time, End Time, Bike ID, Trip Duration Category</li>
+                <li>No missing values in the final dataset</li>
+            </ul>
+        </p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Atnafu Ayalew</p>
+    </footer>
+
+    <script src="static/js/app.js"></script>
+</body>
+</html>

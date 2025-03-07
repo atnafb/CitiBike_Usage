@@ -1,6 +1,6 @@
 function adjustTableauSize() {
     var vizElement = document.querySelector('.tableauViz');
-    if (!vizElement) return; // Prevent errors if element is not found
+    if (!vizElement) return; 
 
     var screenWidth = window.innerWidth;
 
